@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+}
+
+.title {
+  margin: 24px 0 !important;
+}
+
+.subtitle {
+  margin: 12px 0;
+}
+
+.containerInner {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.column {
+  flex: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    color: transparent;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerInner {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    width: 100%;
+    flex: auto;
+  }
+}
+
+
+.label,
+.result {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 36px;
+
+  &::before {
+    display: block;
+    content: '';
+    padding-bottom: 100%;
+  }
+}
+
+.label {
+  cursor: pointer;
+
+  &::after {
+    content: 'Завантажити зображення';
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    backdrop-filter: blur(4px);
+    background-color: hsla(0deg, 0%, 40%, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    transition: all 400ms;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0deg, 0%, 40%);
+  pointer-events: none;
+  z-index: 2;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.resultButton {
+  position: absolute;
+  inset: 0;
+  transition: all 400ms;
+  opacity: 0;
+  backdrop-filter: blur(4px);
+  background-color: hsla(0deg, 0%, 40%, 0.5);
+  border: none;
+  box-shadow: none;
+  z-index: 10;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
