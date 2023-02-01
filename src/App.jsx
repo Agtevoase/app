@@ -152,7 +152,7 @@ const App = () => {
                 hidden
                 onChange={(event) => onUpload(event, 0)}
               />
-              <img alt="first" src={firstImage || '/no-image.jpg'} />
+              <img alt="first" src={firstImage || 'no-image.jpg'} />
             </label>
 
             <Typography
@@ -184,7 +184,7 @@ const App = () => {
                 hidden
                 onChange={(event) => onUpload(event, 1)}
               />
-              <img alt="second" src={secondImage || '/no-image.jpg'} />
+              <img alt="second" src={secondImage || 'no-image.jpg'} />
             </label>
 
             <Typography
